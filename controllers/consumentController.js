@@ -5,6 +5,13 @@ async function getAllConsument(req, res) {
     res.json(consument)
 }
 
+async function createConsument(req, res) {
+    const consument = req.body;
+    const createdConsument = await consumentService.createConsument(consument)
+    res.status(201).json(createdConsument);
+}
+
 module.exports = {
-    getAllConsument
+    getAllConsument,
+    createConsument
 }

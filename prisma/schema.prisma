@@ -10,10 +10,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Consument {
+//menu
+model menu {
   id Int @id@default(autoincrement())
+  cakeImg String
+  cakeName String
+  price String
+}
+
+//order form
+model Consument  {
+  id Int @id@default(autoincrement())
+  cake String
   name String
   email String
   telpNo String
 }
+
 
