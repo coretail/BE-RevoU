@@ -12,8 +12,14 @@ async function getAllConsument() {
 async function createConsument(consument) {
     
     try {
+        const { name, cake, cakeSum, address } = consument
         return await prisma.consument.create({
-            data: consument
+            data: {
+                name,
+                cake,
+                cakeSum: Number(cakeSum),
+                address
+            }
         });
     } catch (err) {
         throw err;
